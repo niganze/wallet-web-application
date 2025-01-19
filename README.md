@@ -117,6 +117,6 @@ This project is licensed under the MIT License.
 ---
 
 ### Deployment Links
-- Frontend: [Frontend Live](#)
-- Backend: [Backend Live](#)
+- Frontend: [Frontend Live](https://ericwallets.netlify.app/)
+- Backend: [Backend Live](https://walletbacked.onrender.com)
 
