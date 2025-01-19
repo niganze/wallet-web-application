@@ -114,7 +114,7 @@ The Wallet Web Application is designed to help users like Eric, an employee of C
 - Submit a pull request with a detailed description of changes.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Alain Tech License.
 
 ---
 
