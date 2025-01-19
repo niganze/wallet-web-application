@@ -19,7 +19,7 @@ function Transactions() {
     // Fetch categories
     fetch('https://walletbacked.onrender.com/api/categories')
       .then((response) => response.json())
-      .then((data) => setCategories(data)) // Directly setting categories array
+      .then((data) => setCategories(data)) 
       .catch(() => setError('Failed to load categories.'));
   }, []);
 
@@ -28,11 +28,11 @@ function Transactions() {
       amount: amount,
       account: account,
       category: selectedCategory,
-      user: 'userId', // Replace with actual user ID
+      user: 'userId',
     };
 
     try {
-      const response = await fetch('https://walletbacked.onrender.com/api/budget', {
+      const response = await fetch('https://walletbacked.onrender.com/api/budgets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function Transactions() {
 
                   <div>
                     <p className="text-gray-700 font-semibold">
-                      {getCategoryNameById(transaction.category._id)} {/* Display category name */}
+                      {getCategoryNameById(transaction.category._id)}
                     </p>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ function Transactions() {
 
             <div className="mt-6 flex justify-between">
               <button
-                onClick={() => setIsModalOpen(false)} // Close modal on cancel
+                onClick={() => setIsModalOpen(false)}
                 className="bg-gray-300 text-gray-800 px-4 py-2 rounded-md"
               >
                 Cancel
