@@ -20,7 +20,7 @@ function Report() {
     // Fetching transaction data
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/transactions");
+        const response = await axios.get("https://walletbacked.onrender.com/api/transactions");
         if (response.status === 200) {
           setTransactions(response.data);
         }

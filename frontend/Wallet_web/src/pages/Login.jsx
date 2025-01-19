@@ -14,7 +14,7 @@ function Login() {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/login", {
+      const response = await axios.post("https://walletbacked.onrender.com/api/users/login", {
         username,
         password,
       });
@@ -30,6 +30,10 @@ function Login() {
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again.");
     }
+  };
+
+  const handleGoHome = () => {
+    navigate("/");  // Navigate back to the home page
   };
 
   return (
@@ -52,6 +56,14 @@ function Login() {
           <p className="text-sm text-gray-600 mb-6 text-center">
             Sign in to continue managing your Wallet Pro account.
           </p>
+
+          {/* Back to Home Button */}
+          <button
+            onClick={handleGoHome}
+            className="text-sm text-[#0A1F95] hover:underline mb-4 text-center"
+          >
+            Back to Home
+          </button>
 
           {/* Form */}
           <form className="space-y-6" onSubmit={handleLogin}>

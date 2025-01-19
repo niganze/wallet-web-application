@@ -17,9 +17,9 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const [categoriesRes, budgetsRes, transactionsRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/categories"),
-          axios.get("http://localhost:5000/api/budgets"),
-          axios.get("http://localhost:5000/api/transactions"),
+          axios.get("https://walletbacked.onrender.com/api/categories"),
+          axios.get("https://walletbacked.onrender.com/api/budgets"),
+          axios.get("https://walletbacked.onrender.com/api/transactions"),
         ]);
 
         setCategories(categoriesRes.data);
@@ -37,7 +37,7 @@ function Dashboard() {
   const generateReport = async () => {
     setLoading(true);
     try {
-      const transactionsRes = await axios.get("http://localhost:5000/api/transactions", {
+      const transactionsRes = await axios.get("https://walletbacked.onrender.com/api/transactions", {
         params: { startDate, endDate },
       });
       const report = {
@@ -112,15 +112,15 @@ function Dashboard() {
 
       {/* Info Cards */}
       <div className="grid grid-cols-4 gap-6 mb-6">
-        <div className="p-4 bg-orange-500 text-white text-center rounded-md">
+        <div className="p-4 bg-[#0A1F95] text-white text-center rounded-md">
           <h3 className="text-xl font-semibold">Transactions</h3>
           <p>{transactions.length}</p>
         </div>
-        <div className="p-4 bg-orange-500 text-white text-center rounded-md">
+        <div className="p-4 bg-[#0A1F95] text-white text-center rounded-md">
           <h3 className="text-xl font-semibold">Categories</h3>
           <p>{categories.length}</p>
         </div>
-        <div className="p-4 bg-orange-500 text-white text-center rounded-md">
+        <div className="p-4 bg-[#0A1F95] text-white text-center rounded-md">
           <h3 className="text-xl font-semibold">Budgets</h3>
           <p>{budgets.length}</p>
         </div>
@@ -142,7 +142,7 @@ function Dashboard() {
         />
         <button
           onClick={generateReport}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-[#0A1F95] text-white px-4 py-2 rounded"
         >
           Generate Report
         </button>
@@ -161,7 +161,7 @@ function Dashboard() {
                 {/* Generate PDF button */}
                 <button
                   onClick={generatePDF}
-                  className="bg-red-500 text-white px-4 py-2 rounded"
+                  className="bg-orange-500 text-white px-4 py-2 rounded"
                 >
                   Download PDF
                 </button>

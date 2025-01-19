@@ -27,7 +27,7 @@ function TransactionDash() {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/transactions");
+        const response = await axios.get("https://walletbacked.onrender.com/api/transactions");
         if (response.status === 200) {
           const data = response.data.map((transaction, index) => ({
             ...transaction,
@@ -43,7 +43,7 @@ function TransactionDash() {
 
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/categories");
+        const response = await axios.get("https://walletbacked.onrender.com/api/categories");
         if (response.status === 200) {
           setCategories(response.data);
         }
@@ -63,7 +63,7 @@ function TransactionDash() {
 
   const handleSubmitTransaction = async () => {
     try {
-      await axios.post("http://localhost:5000/api/transactions", transactionData);
+      await axios.post("https://walletbacked.onrender.com/api/transactions", transactionData);
       alert("Transaction added successfully!");
       setModalOpen(false);
       window.location.reload();
