@@ -76,14 +76,16 @@ The Wallet Web Application is designed to help users like Eric, an employee of C
 5. Start the backend server:
    ```bash
    cd backend
-   npm start
+   npm run dev
    ```
 6. Start the frontend development server:
    ```bash
    cd frontend
-   npm start
+   ls
+   cd Wallet_web
+   npm run dev
    ```
-7. Open the application in your browser at `http://localhost:3000`.
+7. Open the application in your browser at `http://localhost:5173`.
 
 ## Deployment
 
@@ -112,7 +114,7 @@ The Wallet Web Application is designed to help users like Eric, an employee of C
 - Submit a pull request with a detailed description of changes.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Alain Tech License.
 
 ---
 
